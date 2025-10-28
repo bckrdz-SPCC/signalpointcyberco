@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Point Cyber Co. - Professional Cybersecurity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy-deep: #0a0e27;
+            --navy-rich: #141b3d;
+            --navy-medium: #1e2749;
+            --navy-light: #4a5578;
+            --accent-primary: #5b7bc7;
+            --accent-light: #8ba3d8;
+            --pearl-white: #fefefe;
+            --cream-luxury: #f8f9fa;
+            --silver-mist: #e8eaed;
+            --charcoal-text: #1f2937;
+            --shadow-elegant: 0 8px 32px rgba(10, 14, 39, 0.15);
+            --shadow-luxury: 0 16px 64px rgba(10, 14, 39, 0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--pearl-white);
+            color: var(--charcoal-text);
+            line-height: 1.7;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Typography */
+        .serif-headline {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .elegant-text {
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            line-height: 1.8;
+        }
+
+        /* Header - Premium Navigation */
+        header {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-rich) 100%);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(91, 123, 199, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            min-height: 80px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            color: var(--pearl-white);
+        }
+
+        .logo-emblem {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signal-rings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .signal-ring {
+            position: absolute;
+            border: 1.5px solid var(--pearl-white);
+            border-radius: 50%;
+            border-bottom: 1.5px solid transparent;
+            border-left: 1.5px solid transparent;
+            opacity: 0.8;
+            animation: elegantPulse 4s ease-in-out infinite;
+        }
+
+        .signal-ring:nth-child(1) { 
+            width: 48px; height: 48px; 
+            top: 0; left: 0;
+            animation-delay: 0s;
+        }
+        .signal-ring:nth-child(2) { 
+            width: 36px; height: 36px; 
+            top: 6px; left: 6px;
+            animation-delay: 0.8s;
+        }
+        .signal-ring:nth-child(3) { 
+            width: 24px; height: 24px; 
+            top: 12px; left: 12px;
+            animation-delay: 1.6s;
+        }
+
+        @keyframes elegantPulse {
+            0%, 100% { 
+                opacity: 0.6; 
+                transform: scale(0.95) rotate(0deg); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.05) rotate(180deg); 
+            }
+        }
+
+        .logo-triangle {
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 14px solid var(--accent-primary);
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-lock {
+            position: absolute;
+            font-size: 10px;
+            color: var(--pearl-white);
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .company-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .company-tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: -0.25rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--pearl-white);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-light);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-light);
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, var(--accent-primary), var(--accent-light));
+            color: var(--pearl-white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.01em;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-elegant);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-primary:hover::before {
+            left: 100%;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .submit-btn {
+            width: 100%; 
+            padding: 1.25rem; 
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section - Sophisticated */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-rich) 60%, var(--navy-medium) 100%);
+            color: var(--pearl-white);
+            padding: 12rem 0 8rem;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(91, 123, 199, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 163, 216, 0.05) 0%, transparent 50%);
+            animation: subtleFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            background: linear-gradient(45deg, var(--pearl-white), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--pearl-white);
+            border: 2px solid var(--pearl-white);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-secondary:hover {
+            background: var(--pearl-white);
+            color: var(--navy-deep);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-elegant);
+        }
+
+        /* Prestige Indicators */
+        .prestige-section {
+            background: var(--cream-luxury);
+            padding: 4rem 0;
+            border-top: 1px solid rgba(91, 123, 199, 0.2);
+            border-bottom: 1px solid rgba(91, 123, 199, 0.2);
+        }
+
+        .prestige-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .prestige-item {
+            padding: 2rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .prestige-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(45deg, var(--accent-primary), var(--accent-light));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-elegant);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prestige-icon::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--navy-deep);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .prestige-item:nth-child(1) .prestige-icon::before {
+            /* Selective - geometric diamond */
+            transform: rotate(45deg);
+            border-radius: 2px;
+        }
+
+        .prestige-item:nth-child(2) .prestige-icon::before {
+            /* Discretion - lock shape */
+            border-radius: 4px 4px 0 0;
+            width: 16px;
+            height: 12px;
+            border-bottom: 8px solid var(--navy-deep);
+            border-left: 2px solid var(--navy-deep);
+            border-right: 2px solid var(--navy-deep);
+        }
+
+        .prestige-item:nth-child(3) .prestige-icon::before {
+            /* Vigilance - radar rings */
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--navy-deep);
+            background: transparent;
+        }
+
+        .prestige-item:nth-child(3) .prestige-icon::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid var(--navy-deep);
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        .prestige-item:nth-child(4) .prestige-icon::before {
+            /* Advisory - abstract person/consultation */
+            border-radius: 50% 50% 0 0;
+            width: 18px;
+            height: 18px;
+            border-bottom: none;
+        }
+
+        .prestige-item:nth-child(4) .prestige-icon::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--navy-deep);
+            border-radius: 50%;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .prestige-icon::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-primary), transparent, var(--accent-primary));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .prestige-item:hover .prestige-icon::after {
+            opacity: 1;
+        }
+
+        .prestige-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--navy-deep);
+        }
+
+        .prestige-item p {
+            color: var(--navy-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Elegant Problem Statement */
+        .challenge-section {
+            padding: 8rem 0;
+            background: var(--pearl-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy-deep);
+            line-height: 1.2;
+        }
+
+        .section-header .subtitle {
+            font-size: 1.25rem;
+            color: var(--navy-light);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .challenge-card {
+            background: var(--pearl-white);
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-elegant);
+            border-left: 4px solid var(--accent-primary);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, rgba(91, 123, 199, 0.05), transparent);
+            border-radius: 0 12px 0 100px;
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-luxury);
+            border-left-color: var(--accent-light);
+        }
+
+        .challenge-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+            color: var(--navy-deep);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .challenge-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--navy-light);
+        }
+
+        /* Luxury Solutions */
+        .solutions-section {
+            padding: 8rem 0;
+            background: var(--silver-mist);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .solution-card {
+            background: var(--pearl-white);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-elegant);
+            border-top: 3px solid var(--accent-primary);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(91, 123, 199, 0.03) 0%, transparent 70%);
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .solution-card:hover::after {
+            opacity: 1;
+            top: -25%;
+            right: -25%;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-luxury);
+            border-top-color: var(--accent-light);
+        }
+
+        .solution-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1.25rem;
+            color: var(--navy-deep);
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .solution-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--navy-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Premium Differentiators */
+        .premium-section {
+            padding: 8rem 0;
+            background: var(--pearl-white);
+        }
+
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .premium-card {
+            padding: 3rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .premium-icon {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(45deg, var(--navy-deep), var(--navy-rich));
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-elegant);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-icon::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--navy-deep), var(--navy-rich));
+            z-index: -1;
+        }
+
+        .premium-icon::after {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--pearl-white);
+            transition: all 0.3s ease;
+        }
+
+        .premium-card:nth-child(1) .premium-icon::after {
+            /* Focused - target/bullseye */
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: inset 0 0 0 8px transparent, inset 0 0 0 12px var(--pearl-white);
+        }
+
+        .premium-card:nth-child(2) .premium-icon::after {
+            /* Infrastructure - geometric structure */
+            border-radius: 4px;
+            transform: rotate(45deg);
+            background: transparent;
+        }
+
+        .premium-card:nth-child(3) .premium-icon::after {
+            /* Discretion - shield shape */
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            background: transparent;
+            transform: rotate(180deg);
+        }
+
+        .premium-card:nth-child(4) .premium-icon::after {
+            /* Response - signal/wave */
+            border-radius: 50% 0;
+            transform: rotate(45deg);
+            background: transparent;
+            border-width: 3px 3px 0 0;
+            box-shadow: -10px 10px 0 -7px var(--pearl-white), -20px 20px 0 -17px var(--pearl-white);
+        }
+
+        /* Rotating gradient border animation */
+        .premium-icon {
+            background: linear-gradient(45deg, var(--navy-deep), var(--navy-rich));
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .premium-icon:before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-primary), var(--accent-light), var(--accent-primary));
+            z-index: -2;
+            animation: rotateGradient 3s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .premium-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--navy-deep);
+            font-weight: 600;
+        }
+
+        .premium-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--navy-light);
+        }
+
+        /* Exclusive Contact Section */
+        .contact-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-rich) 100%);
+            color: var(--pearl-white);
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(91, 123, 199, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 163, 216, 0.05) 0%, transparent 50%);
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--pearl-white);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--pearl-white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-light);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 3px rgba(91, 123, 199, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Sophisticated Footer */
+        footer {
+            background: var(--navy-deep);
+            color: var(--pearl-white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-list {
+            list-style: none;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .footer-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+            margin: 2rem 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .challenge-grid,
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 8rem 0 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo-container">
+                <div class="logo-emblem">
+                    <div class="signal-rings">
+                        <div class="signal-ring"></div>
+                        <div class="signal-ring"></div>
+                        <div class="signal-ring"></div>
+                    </div>
+                    <div class="logo-triangle"></div>
+                    <div class="logo-lock">🔒</div>
+                </div>
+                <div>
+                    <div class="company-name">Signal Point Cyber Co.</div>
+                    <div class="company-tagline">your world. secured.</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+            <a href="#consultation" class="cta-primary">Security Assessment</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="serif-headline">Serious Security for Serious People</h1>
+                <p class="tagline elegant-text">Professional-grade cybersecurity that actually works for busy professionals, entrepreneurs, and their families</p>
+                <div class="hero-actions">
+                    <a href="#assessment" class="cta-primary">Get Security Assessment</a>
+                    <a href="#consultation" class="cta-secondary">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="prestige-section">
+        <div class="container">
+            <div class="prestige-grid">
+                <div class="prestige-item">
+                    <div class="prestige-icon"></div>
+                    <h4>Smart Client Focus</h4>
+                    <p class="elegant-text">We work exclusively with professionals who value their time and understand the importance of real security</p>
+                </div>
+                <div class="prestige-item">
+                    <div class="prestige-icon"></div>
+                    <h4>Privacy That Works</h4>
+                    <p class="elegant-text">Your privacy is protected with the same standards used by major financial institutions</p>
+                </div>
+                <div class="prestige-item">
+                    <div class="prestige-icon"></div>
+                    <h4>Always-On Protection</h4>
+                    <p class="elegant-text">24/7 monitoring and response - because cyber threats don't keep business hours</p>
+                </div>
+                <div class="prestige-item">
+                    <div class="prestige-icon"></div>
+                    <h4>Real Support</h4>
+                    <p class="elegant-text">A dedicated security advisor who speaks your language and gets your priorities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Statement -->
+    <section class="challenge-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif-headline">Success Creates Digital Risk</h2>
+                <p class="subtitle elegant-text">The more successful you become, the bigger target you present to cybercriminals. Your connected lifestyle shouldn't compromise your security.</p>
+            </div>
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <h3>Multiple Properties, Multiple Problems</h3>
+                    <p class="elegant-text">Whether it's your primary residence, vacation home, or investment properties, each location multiplies your digital attack surface. Smart home systems, security cameras, and Wi-Fi networks create vulnerabilities that most security companies ignore.</p>
+                </div>
+                <div class="challenge-card">
+                    <h3>High-Value Target</h3>
+                    <p class="elegant-text">Your success makes you a target. Business emails, financial apps, social media, and location services create a detailed digital profile that cybercriminals actively exploit. One breach can impact your business, finances, and family.</p>
+                </div>
+                <div class="challenge-card">
+                    <h3>Extended Digital Family</h3>
+                    <p class="elegant-text">Your family, household staff, and business associates expand your security perimeter. Their devices, accounts, and digital habits can become backdoors into your personal and professional life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif-headline">Security That Actually Protects</h2>
+                <p class="subtitle elegant-text">Real cybersecurity solutions designed for people who have real things to protect - and no time to manage it themselves</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>Complete Home & Family Protection</h3>
+                    <p class="elegant-text">Comprehensive security for your family, staff, and all properties. We handle device management, network security, backup systems, and monitoring so you don't have to.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Professional & Business Security</h3>
+                    <p class="elegant-text">Advanced protection for your business communications, financial accounts, and professional reputation. Includes travel security kits and incident response support.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Business Operations Security</h3>
+                    <p class="elegant-text">Enterprise-level security for your business operations, staff training, and compliance requirements. We make sure your business infrastructure is bulletproof.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>24/7 Monitoring & Response</h3>
+                    <p class="elegant-text">Your dedicated security operations center with round-the-clock monitoring, instant threat response, and direct access to security experts when you need them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Differentiators -->
+    <section class="premium-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif-headline">Why Smart People Choose Signal Point</h2>
+            </div>
+            <div class="premium-grid">
+                <div class="premium-card">
+                    <div class="premium-icon"></div>
+                    <h3>We Know Your World</h3>
+                    <p class="elegant-text">We work exclusively with successful professionals and entrepreneurs, so we understand your unique security challenges and time constraints.</p>
+                </div>
+                <div class="premium-card">
+                    <div class="premium-icon"></div>
+                    <h3>Bank-Level Security</h3>
+                    <p class="elegant-text">The same security standards used by major financial institutions, but delivered through systems you can actually use and understand.</p>
+                </div>
+                <div class="premium-card">
+                    <div class="premium-icon"></div>
+                    <h3>Your Privacy Matters</h3>
+                    <p class="elegant-text">Complete confidentiality and privacy protection. We use codename systems internally and maintain strict data security protocols.</p>
+                </div>
+                <div class="premium-card">
+                    <div class="premium-icon"></div>
+                    <h3>Always There When You Need Us</h3>
+                    <p class="elegant-text">Direct access to security experts 24/7. When something goes wrong, you get a real person who can actually help - not a chatbot or ticket system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="consultation">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-header">
+                    <h2 class="serif-headline">Get Your Security Assessment</h2>
+                    <p class="subtitle elegant-text">Start with a confidential security review that shows you exactly where you're vulnerable and how to fix it</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" required placeholder="Your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" required placeholder="Your last name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Contact Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your preferred contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="profile">Professional Profile *</label>
+                        <select id="profile" name="profile" class="form-control" required>
+                            <option value="">Please select your profile</option>
+                            <option value="entrepreneur">Entrepreneur/Business Owner</option>
+                            <option value="executive">Corporate Executive</option>
+                            <option value="investment">Investment Professional</option>
+                            <option value="legal">Legal Professional</option>
+                            <option value="medical">Medical Professional</option>
+                            <option value="technology">Technology Professional</option>
+                            <option value="real-estate">Real Estate Professional</option>
+                            <option value="financial">Financial Advisor/Planner</option>
+                            <option value="other">Other Professional</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="concerns">Primary Security Concerns</label>
+                        <textarea id="concerns" name="concerns" rows="4" class="form-control" placeholder="What keeps you up at night regarding digital security? (optional but helps us prepare)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="cta-primary submit-btn">Get My Security Assessment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-detail">
+                        <span>📧</span>
+                        <span>hello@signalpointcyber.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <span>📱</span>
+                        <span>+1 (212) 555-0147</span>
+                    </div>
+                    <div class="contact-detail">
+                        <span>🏢</span>
+                        <span>Professional Services Office</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Security Services</h3>
+                    <ul class="footer-list">
+                        <li>Complete Home & Family Protection</li>
+                        <li>Professional & Business Security</li>
+                        <li>Business Operations Security</li>
+                        <li>24/7 Monitoring & Response</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-list">
+                        <li>Security Assessment</li>
+                        <li>Threat Intelligence</li>
+                        <li>Privacy Protection</li>
+                        <li>Emergency Response</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Signal Point Cyber Co. All rights reserved. | Privacy Policy | Terms of Service | Client Portal</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sophisticated smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Elegant header behavior on scroll
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(10, 14, 39, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #0a0e27 0%, #141b3d 100%)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Form submission with validation
+        const contactForm = document.querySelector('.contact-form');
+        const submitButton = document.querySelector('.submit-btn');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const profile = formData.get('profile');
+            
+            // Validate required fields
+            if (!firstName || !lastName || !email || !profile) {
+                showAlert('Please complete all required fields to proceed with your assessment request.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showAlert('Please provide a valid email address.');
+                return;
+            }
+            
+            // Simulate form submission
+            submitButton.innerHTML = 'Processing Request...';
+            submitButton.style.background = 'linear-gradient(45deg, #475569, #334155)';
+            
+            setTimeout(() => {
+                showSuccess(`Thanks ${firstName}! We've received your security assessment request. Our team will contact you within 24 hours to schedule your confidential review.`);
+                
+                // Reset form
+                contactForm.reset();
+                submitButton.innerHTML = 'Get My Security Assessment';
+                submitButton.style.background = 'linear-gradient(45deg, var(--accent-primary), var(--accent-light))';
+            }, 2000);
+        });
+
+        // Alert system
+        function showAlert(message) {
+            const alertDiv = document.createElement('div');
+            alertDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+                color: white;
+                padding: 1.5rem 2rem;
+                border-radius: 12px;
+                box-shadow: 0 16px 64px rgba(10, 14, 39, 0.2);
+                z-index: 10000;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.95rem;
+                max-width: 400px;
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+            `;
+            alertDiv.textContent = message;
+            
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                alertDiv.style.transform = 'translateX(100%)';
+                setTimeout(() => document.body.removeChild(alertDiv), 400);
+            }, 4000);
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.createElement('div');
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(10, 14, 39, 0.95);
+                color: var(--pearl-white);
+                padding: 3rem;
+                border-radius: 16px;
+                box-shadow: 0 16px 64px rgba(10, 14, 39, 0.3);
+                z-index: 10000;
+                font-family: 'Inter', sans-serif;
+                font-size: 1rem;
+                max-width: 500px;
+                text-align: center;
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(91, 123, 199, 0.2);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            `;
+            successDiv.innerHTML = `
+                <div style="font-size: 2rem; margin-bottom: 1rem;">✓</div>
+                <div>${message}</div>
+                <div style="margin-top: 2rem;">
+                    <button onclick="this.parentElement.parentElement.style.opacity='0'; setTimeout(() => document.body.removeChild(this.parentElement.parentElement), 400);" 
+                            style="background: linear-gradient(45deg, var(--accent-primary), var(--accent-light)); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                        Continue
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                successDiv.style.opacity = '1';
+            }, 100);
+        }
+
+        // Enhanced hover effects for cards
+        document.querySelectorAll('.premium-card, .solution-card, .challenge-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+                this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply scroll animations to key elements
+        document.querySelectorAll('.section-header, .challenge-card, .solution-card, .premium-card, .prestige-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(element);
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.transform = `translateY(${scrolled * -0.2}px)`;
+            }
+        });
+
+        // Animation delays for staggered appearance
+        setTimeout(() => {
+            document.querySelectorAll('.prestige-item').forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2}s`;
+            });
+        }, 100);
+    </script>
+</body>
+</html>
